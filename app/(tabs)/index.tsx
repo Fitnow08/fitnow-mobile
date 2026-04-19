@@ -8,7 +8,7 @@ const SafeAreaView = styled(RNSaveAreaView)
 export default function App() {
 	return (
 		<SafeAreaView className='flex-1 p-5 bg-white'>
-			<Text className='text-xl font-bold text-blue-500'>Test</Text>
+			<Text className='text-xl font-manrope-medium '>Home</Text>
 			<Link
 				href='/(tabs)/alltrains'
 				className='mt-4 rounded-md text-blue-500 p4 bg-primary'

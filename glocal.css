@@ -3,3 +3,13 @@
 @import "tailwindcss/utilities.css";
 
 @import "nativewind/theme";
+
+@theme {
+    --font-manrope-bold: "Manrope-Bold";
+    --font-manrope-medium: "Manrope-Medium";
+    --font-manrope: "Manrope-Regular";
+    --font-sfpro-bold: "SFPRO-Bold";
+    --font-sfpro-medium: "SFPRO-Medium";
+    --font-sfpro: "SFPRO-Regular";
+    --font-sfpro-semibold-italic: "SFPRO-SemiBoldItalic";
+}
