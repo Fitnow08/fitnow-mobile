@@ -12,4 +12,19 @@
     --font-sfpro-medium: "SFPRO-Medium";
     --font-sfpro: "SFPRO-Regular";
     --font-sfpro-semibold-italic: "SFPRO-SemiBoldItalic";
+
+    --color-dark: #1A1B1E;
+    --color-bgdark: #0E0E10;
+    --color-white: #EBEBF5
+    --color-bginputdark
+}
+
+@layer components {
+
+    .home-header {
+        @apply flex-col gap-3 mb-2.5 dark:bg-dark w-full px-5 py-3;
+    }
+    .home-avatar {
+        @apply size-16 rounded-full;
+    }
 }

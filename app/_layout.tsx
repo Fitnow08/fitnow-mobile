@@ -1,6 +1,7 @@
 import { SplashScreen, Stack } from 'expo-router'
 import { useFonts } from 'expo-font'
 import { useEffect } from 'react'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -23,5 +24,9 @@ export default function RootLayout() {
 	if (!fontsLoaded) {
 		return null
 	}
-	return <Stack screenOptions={{ headerShown: false }} />
+	return (
+		<GestureHandlerRootView style={{ flex: 1 }}>
+			<Stack screenOptions={{ headerShown: false }} />
+		</GestureHandlerRootView>
+	)
 }

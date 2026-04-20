@@ -1,7 +1,7 @@
 import { BlurView } from 'expo-blur'
 import { Tabs } from 'expo-router'
 import { Platform, View } from 'react-native'
-import { tabs, ACTIVE_COLOR } from '@/constants/data'
+import { tabs, ACTIVE_COLOR } from '@/shared/constants/data'
 import TabIcon from '@/shared/ui/Icon'
 
 const TabLayout = () => {

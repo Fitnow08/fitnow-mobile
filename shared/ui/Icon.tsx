@@ -1,7 +1,7 @@
 import { View } from 'react-native'
 import { Image } from 'expo-image'
 import Animated, { useAnimatedStyle, withTiming } from 'react-native-reanimated'
-import { ACTIVE_COLOR } from '@/constants/data'
+import { ACTIVE_COLOR } from '@/shared/constants/data'
 type TabIconProps = {
 	focused: boolean
 	icon: any
