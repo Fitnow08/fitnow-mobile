@@ -13,7 +13,7 @@ export const SearchInput = ({ placeholder = 'Поиск...' }: SearchInputProps)
 	const setQuery = useSearchStore(s => s.setQuery)
 
 	return (
-		<View className='flex-row items-center gap-2 px-2 py-3 rounded-2xl bg-gray-600 dark:bg-bginputdark dark:opacity-30 '>
+		<View className='flex-row items-center gap-2 px-2 py-1 rounded-2xl bg-gray-600 dark:bg-bginputdark dark:opacity-30 '>
 			<Ionicons
 				name='search-outline'
 				size={30}

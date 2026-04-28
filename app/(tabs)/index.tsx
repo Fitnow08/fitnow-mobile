@@ -1,5 +1,7 @@
 import '@/glocal.css'
 import { View, Image } from 'react-native'
+import { useRef } from 'react'
+import { ICarouselInstance } from 'react-native-reanimated-carousel'
 
 import { SafeAreaView as RNSaveAreaView } from 'react-native-safe-area-context'
 import { styled } from 'nativewind'
@@ -9,12 +11,31 @@ import { MyText } from '@/shared/ui/Text'
 import { ThemeToggle } from '@/shared/ui/ThemeToggle'
 import { NotificationBell } from '@/shared/ui/NotificationBell'
 import { SearchInput } from '@/shared/ui/SearchInput'
-import { Slider } from '@/shared/ui/Slider'
-import { useState } from 'react'
-
+import {
+	TrainingCarousel,
+	NextSlide,
+	TrainingItem
+} from '@/shared/ui/TrainingCarousel'
+import { TrainingCategories } from '@/shared/ui/TrainingCategories'
+export const ITEMSSlider: TrainingItem = {
+	id: '1',
+	title: 'Кардио',
+	categories: [
+		{
+			icon: require('@/assets/images/categories-train/weight.png'),
+			title: 'fast'
+		},
+		{
+			icon: require('@/assets/images/categories-train/Lightning.png'),
+			title: 'speed'
+		}
+	],
+	image: require('@/assets/images/train.png')
+}
 const SafeAreaView = styled(RNSaveAreaView)
 export default function App() {
-	const [intensity, setIntensity] = useState(50)
+	const carouselRef = useRef<ICarouselInstance>(null)
+
 	return (
 		<SafeAreaView className='flex-1 bg-white dark:bg-bgdark'>
 			<View className='home-header'>
@@ -30,8 +51,13 @@ export default function App() {
 				</View>
 				<SearchInput placeholder='Поиск тренировок...' />
 			</View>
-			<View className='flex-row justify-between items-center'>
-				<Slider min={0} max={100} value={intensity} onChange={setIntensity} />
+			<TrainingCategories categories={ITEMSSlider.categories} />
+			<View className=''>
+				<View className='flex-row justify-between items-center ml-4 mb-4 mr-4'>
+					<MyText className='text-2xl'>Программы для вас</MyText>
+					<NextSlide onPress={() => carouselRef.current?.next()} />
+				</View>
+				<TrainingCarousel carouselRef={carouselRef} />
 			</View>
 		</SafeAreaView>
 	)
